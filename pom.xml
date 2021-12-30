@@ -6,7 +6,7 @@
 
     <name>Java object of Git URL</name>
     <description>A Java library that containing Git repository URL as object with parser provided.</description>
-    <!--<url>https://github.com/rk0cc/jogu</url>-->
+    <url>https://github.com/rk0cc/jogu</url>
 
     <contributors>
         <contributor>
