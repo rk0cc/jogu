@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/main/java/**.java'
+      - '.github/workflows/codeql.yml'
   pull_request:
     branches:
       - main
