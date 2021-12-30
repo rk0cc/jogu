@@ -120,6 +120,7 @@ final class GitRepositoryURLParseProcessor<T extends GitRepositoryURL> {
     T generateNewGitRepoURL(@Nonnull String gitURL) throws UnknownGitRepositoryURLTypeException {
         try {
             try {
+                // Determine is a legit URL or not.
                 URI guri = new URI(gitURL);
 
                 final String hostWPort = guri.getHost() + (guri.getPort() == -1 ? "" : ":" + guri.getPort());
@@ -130,6 +131,7 @@ final class GitRepositoryURLParseProcessor<T extends GitRepositoryURL> {
                     return (T) switch (guri.getScheme()) {
                         case "https" -> new GitHttpsRepositoryURL(hostWPort, pathWOSlashFirst);
                         case "git" -> new GitGitRepositoryURL(hostWPort, pathWOSlashFirst);
+                        // Default block is required, omit it will cause compile error.
                         default -> throw new AssertionError("Found unknown scheme: " + guri.getScheme());
                     };
                 } else {
@@ -137,10 +139,12 @@ final class GitRepositoryURLParseProcessor<T extends GitRepositoryURL> {
                     // noinspection SwitchStatementWithTooFewBranches
                     return (T) switch (guri.getScheme()) {
                         case "ssh" -> new GitSSHRepositoryURL(guri.getUserInfo(), hostWPort, pathWOSlashFirst);
+                        // Default block is required, omit it will cause compile error.
                         default -> throw new AssertionError("Found unknown scheme: " + guri.getScheme());
                     };
                 }
             } catch (URISyntaxException urie) {
+                // Check is alternative SSH URL
                 String[] aSSHUsrNHP = gitURL.split("@");
 
                 assert aSSHUsrNHP.length == 2;
