@@ -130,12 +130,14 @@ final class GitRepositoryURLParseProcessor<T extends GitRepositoryURL> {
                     return (T) switch (guri.getScheme()) {
                         case "https" -> new GitHttpsRepositoryURL(hostWPort, pathWOSlashFirst);
                         case "git" -> new GitGitRepositoryURL(hostWPort, pathWOSlashFirst);
+                        default -> throw new AssertionError("Found unknown scheme: " + guri.getScheme());
                     };
                 } else {
                     assert userInfoScheme.contains(guri.getScheme());
                     // noinspection SwitchStatementWithTooFewBranches
                     return (T) switch (guri.getScheme()) {
                         case "ssh" -> new GitSSHRepositoryURL(guri.getUserInfo(), hostWPort, pathWOSlashFirst);
+                        default -> throw new AssertionError("Found unknown scheme: " + guri.getScheme());
                     };
                 }
             } catch (URISyntaxException urie) {
