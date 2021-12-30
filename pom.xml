@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>Java object of Git URL</name>
-    <description>A Java library that containing Git as object with parser provided.</description>
+    <description>A Java library that containing Git repository URL as object with parser provided.</description>
     <!--<url>https://github.com/rk0cc/jogu</url>-->
 
     <contributors>
