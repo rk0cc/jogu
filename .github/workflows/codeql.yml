@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 'src/main/java/**.java'
+      - 'pom.xml'
       - '.github/workflows/codeql.yml'
   pull_request:
     branches:
