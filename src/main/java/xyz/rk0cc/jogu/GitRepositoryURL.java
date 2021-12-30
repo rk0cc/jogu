@@ -127,15 +127,15 @@ final class GitRepositoryURLParseProcessor<T extends GitRepositoryURL> {
 
                 if (guri.getUserInfo() == null) {
                     assert noUserInfoScheme.contains(guri.getScheme());
-                    return (T) switch (guri.getScheme()) {
-                        case "https" -> new GitHttpsRepositoryURL(hostWPort, pathWOSlashFirst);
-                        case "git" -> new GitGitRepositoryURL(hostWPort, pathWOSlashFirst);
+                    return switch (guri.getScheme()) {
+                        case "https" -> (T) new GitHttpsRepositoryURL(hostWPort, pathWOSlashFirst);
+                        case "git" -> (T) new GitGitRepositoryURL(hostWPort, pathWOSlashFirst);
                     };
                 } else {
                     assert userInfoScheme.contains(guri.getScheme());
                     // noinspection SwitchStatementWithTooFewBranches
-                    return (T) switch (guri.getScheme()) {
-                        case "ssh" -> new GitSSHRepositoryURL(guri.getUserInfo(), hostWPort, pathWOSlashFirst);
+                    return switch (guri.getScheme()) {
+                        case "ssh" -> (T) new GitSSHRepositoryURL(guri.getUserInfo(), hostWPort, pathWOSlashFirst);
                     };
                 }
             } catch (URISyntaxException urie) {
