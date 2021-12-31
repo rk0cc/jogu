@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Java object of Git URL</name>
+    <name>jogu</name>
     <description>A Java library that containing Git repository URL as object with parser provided.</description>
     <url>https://github.com/rk0cc/jogu</url>
     <packaging>jar</packaging>
