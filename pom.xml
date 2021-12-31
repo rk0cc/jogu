@@ -7,6 +7,14 @@
     <name>Java object of Git URL</name>
     <description>A Java library that containing Git repository URL as object with parser provided.</description>
     <url>https://github.com/rk0cc/jogu</url>
+    <packaging>jar</packaging>
+
+    <scm>
+        <connection>scm:git:git://github.com/rk0cc/jogu.git</connection>
+        <developerConnection>scm:git:git://github.com/rk0cc/jogu.git</developerConnection>
+        <url>https://github.com/rk0cc/jogu/tree/${project.scm.tag}</url>
+        <tag>main</tag>
+    </scm>
 
     <contributors>
         <contributor>
