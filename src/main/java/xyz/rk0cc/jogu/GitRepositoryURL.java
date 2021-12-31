@@ -74,7 +74,15 @@ public sealed interface GitRepositoryURL extends Serializable permits GitUserinf
         if (!PARSER_APPLY_TYPE.contains(returnType) || returnType.equals(GitRepositoryURL.class))
             throw new ClassCastException("Declared return type parser must be GitRepositoryURL final subclasses.");
 
-        return new GitRepositoryURLParseProcessor<T>().generateNewGitRepoURL(gitURL);
+        final T guo = new GitRepositoryURLParseProcessor<T>().generateNewGitRepoURL(gitURL);
+
+        if (!guo.getClass().equals(returnType))
+            throw new ClassCastException(
+                    "Returned Git repository type is '" + guo.getClass().getName() + "', "
+                    + "not '" + returnType.getName() + "'."
+            );
+
+        return guo;
     }
 
     /**
