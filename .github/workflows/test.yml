@@ -21,7 +21,7 @@ jobs:
           - windows-latest
           - macos-latest
           - ubuntu-latest
-        jdk-disto:
+        jdk-disrto:
           - 'temurin'
           - 'zulu'
           - 'liberica'
@@ -36,8 +36,8 @@ jobs:
       - name: JDK setup
         uses: actions/setup-java@v2.5.0
         with:
-          java-version: ${{ matrix.jdk-version }}
           distribution: ${{ matrix.jdk-distro }}
+          java-version: ${{ matrix.jdk-version }}
           cache: 'maven'
       - name: Get dependencies
         run: mvn install
@@ -45,7 +45,7 @@ jobs:
         id: maven-surefire
         run: mvn test
       - name: Get stack trace if surefire test failed
-        if: ${{ failure() && steps.maven-surefire.outcome != 'success' }}
+        if: ${{ failure() && steps.maven-surefire.outcome == 'failure' }}
         uses: actions/upload-artifact@v2.3.1
         with:
           name: failstack-jdk${{ matrix.jdk-version }}-${{ matrix.jdk-distro }}-${{ matrix.os }}
