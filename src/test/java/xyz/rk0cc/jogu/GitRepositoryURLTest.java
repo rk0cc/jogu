@@ -83,4 +83,16 @@ final class GitRepositoryURLTest {
                 () -> GitRepositoryURL.parse("ssh://gloria@example.com/ram/sea", GitAltSSHRepositoryURL.class)
         );
     }
+
+    @DisplayName("Check .git is included in the path")
+    @Order(4)
+    @Test
+    void testDotGitCondition() throws UnknownGitRepositoryURLTypeException {
+        assertTrue(GitRepositoryURL.parse("git://example.com/foo.git").isDotGitEndedPath());
+        assertTrue(GitRepositoryURL.parse("git://example.com/foo.oi.git").isDotGitEndedPath());
+        assertFalse(GitRepositoryURL.parse("git://example.com/foo/.git").isDotGitEndedPath());
+        assertFalse(GitRepositoryURL.parse("git://example.com/foo.git.sike").isDotGitEndedPath());
+        assertFalse(GitRepositoryURL.parse("git://example.com/foo.html").isDotGitEndedPath());
+        assertFalse(GitRepositoryURL.parse("git://example.com/foo.jar").isDotGitEndedPath());
+    }
 }
