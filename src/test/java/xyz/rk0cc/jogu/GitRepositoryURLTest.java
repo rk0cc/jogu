@@ -90,7 +90,10 @@ final class GitRepositoryURLTest {
     void testDotGitCondition() throws UnknownGitRepositoryURLTypeException {
         assertTrue(GitRepositoryURL.parse("git://example.com/foo.git").isDotGitEndedPath());
         assertTrue(GitRepositoryURL.parse("git://example.com/foo.oi.git").isDotGitEndedPath());
-        assertFalse(GitRepositoryURL.parse("git://example.com/foo/.git").isDotGitEndedPath());
+        assertThrows(
+                UnknownGitRepositoryURLTypeException.class,
+                () -> GitRepositoryURL.parse("git://example.com/foo/.git").isDotGitEndedPath()
+        );
         assertFalse(GitRepositoryURL.parse("git://example.com/foo.git.sike").isDotGitEndedPath());
         assertFalse(GitRepositoryURL.parse("git://example.com/foo.html").isDotGitEndedPath());
         assertFalse(GitRepositoryURL.parse("git://example.com/foo.jar").isDotGitEndedPath());

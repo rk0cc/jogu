@@ -6,6 +6,7 @@ import javax.annotation.Nonnull;
 import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Objects;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -144,6 +145,9 @@ final class GitRepositoryURLParseProcessor<T extends GitRepositoryURL> {
             try {
                 // Determine is a legit URL or not.
                 URI guri = new URI(gitURL);
+
+                // This should be git control file
+                assert !Pattern.matches("^.*/\\.git$", Objects.requireNonNull(guri.getPath()));
 
                 final String hostWPort = guri.getHost() + (guri.getPort() == -1 ? "" : ":" + guri.getPort());
                 final String pathWOSlashFirst = guri.getPath().substring(1);
