@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /**
  * An interface that indicating this object is referencing the location of remote Git repository.
@@ -54,10 +55,13 @@ public sealed interface GitRepositoryURL extends Serializable permits GitUserinf
     /**
      * Determine is {@link #path()} with <code>.git</code> ended.
      *
+     * @apiNote <code>path/to/.git</code> is not accepted since it refer to Git repository's control directory.
+     *
      * @return <code>true</code> if contains.
      */
     default boolean isDotGitEndedPath() {
         String[] dotSpilt = path().split("\\.");
+        if (Pattern.matches(".*/$", dotSpilt[dotSpilt.length - 2])) return false;
         return dotSpilt[dotSpilt.length - 1].equals("git");
     }
 
