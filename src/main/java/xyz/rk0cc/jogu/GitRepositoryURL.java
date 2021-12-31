@@ -52,6 +52,16 @@ public sealed interface GitRepositoryURL extends Serializable permits GitUserinf
     String assembleURL();
 
     /**
+     * Determine is {@link #path()} with <code>.git</code> ended.
+     *
+     * @return <code>true</code> if contains.
+     */
+    default boolean isDotGitEndedPath() {
+        String[] dotSpilt = path().split("\\.");
+        return dotSpilt[dotSpilt.length - 1].equals("git");
+    }
+
+    /**
      * Parsing URL address to subclass of {@link GitRepositoryURL}.
      *
      * @param gitURL Git repository URL address.
