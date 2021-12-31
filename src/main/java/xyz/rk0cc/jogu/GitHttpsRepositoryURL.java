@@ -42,7 +42,7 @@ public final class GitHttpsRepositoryURL implements LegitURIFormat {
     @Nonnull
     @Override
     public String path() {
-        return path;
+        return "/" + path;
     }
 
     /**
