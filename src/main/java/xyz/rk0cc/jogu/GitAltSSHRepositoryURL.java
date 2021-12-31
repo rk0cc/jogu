@@ -8,7 +8,7 @@ public final class GitAltSSHRepositoryURL implements GitUserinfoRepositoryURL {
 
     GitAltSSHRepositoryURL(@Nonnull String userinfo, @Nonnull String host, @Nonnull String path) {
         this.userinfo = userinfo;
-        this.host = host;
+        this.host = host.toLowerCase();
         this.path = path;
     }
 

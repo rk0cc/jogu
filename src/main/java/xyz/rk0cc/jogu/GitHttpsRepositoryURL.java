@@ -7,7 +7,7 @@ public final class GitHttpsRepositoryURL implements LegitURIFormat {
     private final String host, path;
 
     GitHttpsRepositoryURL(@Nonnull String host, @Nonnull String path) {
-        this.host = host;
+        this.host = host.toLowerCase();
         this.path = path;
     }
 
