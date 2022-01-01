@@ -1,0 +1,32 @@
+name: 'Lock Threads'
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+permissions:
+  issues: write
+  pull-requests: write
+concurrency:
+  group: lock
+jobs:
+  lt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Locking outdate thread
+        uses: dessant/lock-threads@v3
+        with:
+          issue-inactive-days: '90'
+          pr-inactive-days: '90'
+          exclude-any-pr-labels: 'dependencies'
+          issue-lock-reason: 'resolved'
+          pr-lock-reason: 'resolved'
+  ldt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Locking outdate dependabot thread
+        uses: dessant/lock-threads@v3
+        with:
+          pr-inactive-days: '7'
+          include-all-pr-labels: 'dependencies'
+          pr-lock-reason: 'resolved'
+          process-only: 'prs'
