@@ -15,7 +15,7 @@ jobs:
       - name: Locking outdate thread
         uses: dessant/lock-threads@v3
         with:
-          issue-inactive-days: '90'
-          pr-inactive-days: '90'
+          issue-inactive-days: '15'
+          pr-inactive-days: '15'
           issue-lock-reason: 'resolved'
           pr-lock-reason: 'resolved'
