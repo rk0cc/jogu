@@ -38,6 +38,15 @@
     <artifactId>jogu</artifactId>
     <version>1.0.0</version>
 
+    <licenses>
+        <license>
+            <name>Do What The F*ck You Want To Public License</name>
+            <url>http://www.wtfpl.net/about/</url>
+            <distribution>repo</distribution>
+            <comments>Nearly public domain license</comments>
+        </license>
+    </licenses>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -109,6 +118,11 @@
                     </executions>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
+                </plugin>
+                <plugin>
                     <!-- Create javadoc file -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
@@ -119,12 +133,22 @@
                             <goals>
                                 <goal>jar</goal>
                             </goals>
+                            <configuration>
+                                <show>protected</show>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <goals>
+                                <goal>javadoc</goal>
+                                <goal>test-javadoc</goal>
+                            </goals>
+                            <phase>site</phase>
+                            <configuration>
+                                <show>private</show>
+                                <doclint>none</doclint>
+                            </configuration>
                         </execution>
                     </executions>
-                    <configuration>
-                        <show>protected</show>
-                        <doclint>none</doclint>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -134,5 +158,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
