@@ -94,30 +94,6 @@
                     <version>3.2.0</version>
                 </plugin>
                 <plugin>
-                    <!--
-                        Create package with dependencies integrated.
-
-                        DO NOT USE THIS JAR FILE TO UPLOAD MAVEN CENTRAL
-                    -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.3.0</version>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                            <configuration>
-                                <descriptorRefs>
-                                    <!-- File name will be: (package name)-dep-integrated.jar -->
-                                    <descriptorRef>dep-integrated</descriptorRef>
-                                </descriptorRefs>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.7.1</version>
