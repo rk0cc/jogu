@@ -9,8 +9,18 @@ import javax.annotation.Nonnull;
  */
 @SuppressWarnings("ClassCanBeRecord")
 public final class GitSSHRepositoryURL implements GitUserinfoRepositoryURL, LegitURIFormat {
+    /**
+     * Basic information of legit SSH URL.
+     */
     private final String userinfo, host, path;
 
+    /**
+     * Construct new Git repository URL which using legit SSH URL format.
+     *
+     * @param userinfo User information.
+     * @param host Repository host.
+     * @param path Path to repository.
+     */
     GitSSHRepositoryURL(@Nonnull String userinfo, @Nonnull String host, @Nonnull String path) {
         this.userinfo = userinfo;
         this.host = host.toLowerCase();

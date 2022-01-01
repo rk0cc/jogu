@@ -11,8 +11,17 @@ import javax.annotation.Nonnull;
  */
 @SuppressWarnings("ClassCanBeRecord")
 public final class GitHttpsRepositoryURL implements LegitURIFormat {
+    /**
+     * Basic information of Git protocol URL.
+     */
     private final String host, path;
 
+    /**
+     * Construct new Git repository URL which using HTTPS protocol (<code>https://</code>).
+     *
+     * @param host Repository host.
+     * @param path Path to repository.
+     */
     GitHttpsRepositoryURL(@Nonnull String host, @Nonnull String path) {
         this.host = host.toLowerCase();
         this.path = path;

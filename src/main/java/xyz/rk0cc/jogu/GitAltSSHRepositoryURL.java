@@ -10,8 +10,18 @@ import javax.annotation.Nonnull;
  */
 @SuppressWarnings("ClassCanBeRecord")
 public final class GitAltSSHRepositoryURL implements GitUserinfoRepositoryURL {
+    /**
+     * Basic information of alternative SSH URL.
+     */
     private final String userinfo, host, path;
 
+    /**
+     * Construct new Git repository URL which using alternative SSH URL format.
+     *
+     * @param userinfo User information.
+     * @param host Repository host.
+     * @param path Path to repository.
+     */
     GitAltSSHRepositoryURL(@Nonnull String userinfo, @Nonnull String host, @Nonnull String path) {
         this.userinfo = userinfo;
         this.host = host.toLowerCase();
