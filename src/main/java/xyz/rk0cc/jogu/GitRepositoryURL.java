@@ -1,7 +1,5 @@
 package xyz.rk0cc.jogu;
 
-import org.jetbrains.annotations.UnmodifiableView;
-
 import javax.annotation.Nonnull;
 import java.io.Serializable;
 import java.net.URI;
@@ -20,7 +18,7 @@ public sealed interface GitRepositoryURL extends Serializable permits GitUserinf
      * An unmodifiable {@link Set} that indicating which {@link Class} can be used for
      * {@link #parse(String, Class) parser}.
      */
-    @UnmodifiableView Set<Class<? extends GitRepositoryURL>> PARSER_APPLY_TYPE = Set.of(
+    Set<Class<? extends GitRepositoryURL>> PARSER_APPLY_TYPE = Set.of(
             GitRepositoryURL.class,
             GitAltSSHRepositoryURL.class,
             GitHttpsRepositoryURL.class,
@@ -125,7 +123,7 @@ final class GitRepositoryURLParseProcessor<T extends GitRepositoryURL> {
      * An unmodifiable {@link Set} of {@link URI#getScheme() scheme} that is expecting has
      * {@link URI#getUserInfo() user information} or not.
      */
-    private static final @UnmodifiableView Set<String> noUserInfoScheme = Set.of("https", "git"),
+    private static final Set<String> noUserInfoScheme = Set.of("https", "git"),
             userInfoScheme = Set.of("ssh");
 
     /**
