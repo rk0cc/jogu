@@ -23,7 +23,7 @@ Most remote protocol are supported in this library.
 Using Maven 3:
 
 ```xml
-
+<!--suppress MavenModelInspection -->
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <!-- Your Maven stuff -->
     <dependencies>
