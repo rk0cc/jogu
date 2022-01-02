@@ -1,3 +1,8 @@
+## 1.0.1
+
+* Fix unfinished Javadoc
+* Synchronize versioning between repository and Maven central
+
 ## 1.0.0-Release
 
 * Same as `1.0.0` in Maven central
