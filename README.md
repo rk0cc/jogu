@@ -18,6 +18,26 @@ Most remote protocol are supported in this library.
 | SSH protocol (Alternative) |    `git@example.com:foo.git`    |    :white_check_mark:     |
 | File protocol              |    `file:///path/to/foo.git`    |            :x:            |
 
+## Install
+
+Using Maven 3:
+
+```xml
+
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <!-- Your Maven stuff -->
+    <dependencies>
+        <dependency>
+            <groupId>xyz.rk0cc.jogu</groupId>
+            <artifactId>jogu</artifactId>
+            <!-- It is not the best idea of versioning LOL -->
+            <version>1.0.0-Release</version>
+        </dependency>
+    </dependencies>
+    <!-- Your Maven stuff -->
+</project>
+```
+
 ## Setup
 
 * JDK 17 (or above)
