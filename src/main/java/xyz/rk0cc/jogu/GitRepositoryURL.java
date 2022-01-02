@@ -105,7 +105,8 @@ public sealed interface GitRepositoryURL extends Serializable permits GitUserinf
      *
      * @return An object of {@link GitRepositoryURL} with proper information.
      *
-     * @throws UnknownGitRepositoryURLTypeException If
+     * @throws UnknownGitRepositoryURLTypeException If <code>returnType</code> is set to {@link GitRepositoryURL} or the actual return
+     *         type is not mentioned on <code>returnType</code>.
      */
     @Nonnull
     static GitRepositoryURL parse(@Nonnull String gitURL) throws UnknownGitRepositoryURLTypeException {
