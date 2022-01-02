@@ -36,12 +36,7 @@
 
     <groupId>xyz.rk0cc.jogu</groupId>
     <artifactId>jogu</artifactId>
-    <!--
-        PLEASE ADD SUFFIX BEFORE UPLOAD TO CENTRAL!
-
-        EITHER (-SNAPSHOT) OR (-Release)
-    -->
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <licenses>
         <license>
