@@ -37,6 +37,14 @@ Using Maven 3:
 * JDK 17 (or above)
 * Maven
 
+## Documentation
+
+Online version of Javadoc will be availabled in javadoc.io automatically:
+
+[![javadoc](https://javadoc.io/badge2/xyz.rk0cc.jogu/jogu/javadoc.svg)](https://javadoc.io/doc/xyz.rk0cc.jogu/jogu)
+
+For the offline version, please go to [release](https://github.com/rk0cc/jogu/releases).
+
 ## License
 
 WTFPL 2.0
