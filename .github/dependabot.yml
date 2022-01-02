@@ -6,3 +6,4 @@ updates:
       interval: "monthly"
       time: "15:00"
       timezone: "Asia/Hong_Kong"
+    target-branch: "main"
