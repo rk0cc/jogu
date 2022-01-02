@@ -12,7 +12,7 @@
     <scm>
         <connection>scm:git:git://github.com/rk0cc/jogu.git</connection>
         <developerConnection>scm:git:git://github.com/rk0cc/jogu.git</developerConnection>
-        <url>https://github.com/rk0cc/jogu/tree/${project.scm.tag}</url>
+        <url>https://github.com/rk0cc/jogu/tree/main</url>
         <tag>main</tag>
     </scm>
 
