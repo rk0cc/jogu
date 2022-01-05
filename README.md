@@ -32,6 +32,20 @@ Using Maven 3:
 </dependencies>
 ```
 
+## Usage
+
+Get `GitRepositoryURL` without specific implemented type uses:
+
+```java
+GitRepositoryURL gurl = GitRepositoryURL.parse("git://example.com/foo.git");
+```
+
+Get `GitRepositoryURL` with specific implemented type uses:
+
+```java
+GitGitRepositoryURL gurl = GitRepositoryURL.parse(GitGitRepositoryURL.class, "git://example.com/foo.git");
+```
+
 ## Setup
 
 * JDK 17 (or above)
