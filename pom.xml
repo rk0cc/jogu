@@ -12,7 +12,8 @@
     <scm>
         <connection>scm:git:git://github.com/rk0cc/jogu.git</connection>
         <developerConnection>scm:git:git://github.com/rk0cc/jogu.git</developerConnection>
-        <url>https://github.com/rk0cc/jogu/tree/main</url>
+        <url>https://github.com/rk0cc/jogu/tree/${project.scm.tag}</url>
+        <tag>main</tag>
     </scm>
 
     <contributors>
@@ -35,9 +36,7 @@
 
     <groupId>xyz.rk0cc.jogu</groupId>
     <artifactId>jogu</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
-
-    <inceptionYear>2022</inceptionYear>
+    <version>1.0.1</version>
 
     <licenses>
         <license>

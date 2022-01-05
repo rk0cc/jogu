@@ -32,10 +32,32 @@ Using Maven 3:
 </dependencies>
 ```
 
+## Usage
+
+Get `GitRepositoryURL` without specific implemented type uses:
+
+```java
+GitRepositoryURL gurl = GitRepositoryURL.parse("git://example.com/foo.git");
+```
+
+Get `GitRepositoryURL` with specific implemented type uses:
+
+```java
+GitGitRepositoryURL gurl = GitRepositoryURL.parse(GitGitRepositoryURL.class, "git://example.com/foo.git");
+```
+
 ## Setup
 
 * JDK 17 (or above)
 * Maven
+
+## Documentation
+
+Online version of Javadoc will be availabled in javadoc.io automatically:
+
+[![javadoc](https://javadoc.io/badge2/xyz.rk0cc.jogu/jogu/javadoc.svg)](https://javadoc.io/doc/xyz.rk0cc.jogu/jogu)
+
+For the offline version, please go to [release](https://github.com/rk0cc/jogu/releases).
 
 ## License
 
