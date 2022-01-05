@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Modify pom infos
+
 ## 1.0.1
 
 * Fix unfinished Javadoc
