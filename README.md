@@ -7,6 +7,14 @@
 This Java library allows parsing Git repository URL addresses to an actual
 object with validation included.
 
+## Java provides URL and URI to handle these URL already, why create this package?
+
+Yes, most Git repository URL can be parse URL or URI without issue. However, alternative form of SSH URL not.
+
+Alternative SSH address is reference as "SSH" in public git repository which supposed to be invalid technically since it missed protocol and
+not a port number after the colon. Thus, inheriting URL or URI is disallowed since they are marked as final class. As a result, create new object
+which replicate how original URL or URI did with incompatable format supported.
+
 ## Supported protocol of Git repository URL
 
 Most remote protocol are supported in this library.
