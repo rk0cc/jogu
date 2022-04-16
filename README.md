@@ -3,6 +3,8 @@
 [![Test](https://github.com/rk0cc/jogu/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/rk0cc/jogu/actions/workflows/test.yml)
 [![CodeQL](https://github.com/rk0cc/jogu/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/rk0cc/jogu/actions/workflows/codeql.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/xyz.rk0cc.jogu/jogu.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22xyz.rk0cc.jogu%22%20AND%20a:%22jogu%22)
+[![Official Javadoc](https://img.shields.io/badge/Official%20Javadoc-in%20osp.rk0cc.xyz-green)](https://osp.rk0cc.xyz/javadoc/jogu/jogu/1.1.0/)
+[![Alternate Javadoc](https://javadoc.io/badge2/xyz.rk0cc.jogu/jogu/javadoc.svg)](https://javadoc.io/doc/xyz.rk0cc.jogu/jogu)
 
 This Java library allows parsing Git repository URL addresses to an actual
 object with validation included.
