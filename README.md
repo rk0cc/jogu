@@ -29,6 +29,8 @@ Most remote protocol are supported in this library.
 | SSH protocol (Alternative) |    `git@example.com:foo.git`    |    :white_check_mark:     |
 | File protocol              |    `file:///path/to/foo.git`    |            :x:            |
 
+Jogu does not support file protocol since it rarely uses and worthless when making actual request under local directory.
+
 ## Install
 
 Using Maven 3:
@@ -38,7 +40,7 @@ Using Maven 3:
     <dependency>
         <groupId>xyz.rk0cc.jogu</groupId>
         <artifactId>jogu</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
     </dependency>
 </dependencies>
 ```
