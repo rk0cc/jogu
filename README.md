@@ -41,7 +41,7 @@ Using Maven 3:
     <dependency>
         <groupId>xyz.rk0cc.jogu</groupId>
         <artifactId>jogu</artifactId>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
     </dependency>
 </dependencies>
 ```
