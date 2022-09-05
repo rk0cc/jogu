@@ -1,3 +1,7 @@
+## 1.1.2
+
+* Update dependencies
+
 ## 1.1.0
 
 * Only allows traditional SSH URL without port can be converted to alternative SSH URL.
